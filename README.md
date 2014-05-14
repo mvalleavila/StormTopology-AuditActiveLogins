@@ -77,20 +77,21 @@ hbase.column.family=
   
 ### Run topology
 
-  First create the HBaseTable if previously is not created:
-  ```shell
+First create the HBaseTable if previously is not created:
+```
   hbase shell
   hbase > create 'TableName', 'ColumnFamily'
-  ```
+```
   
-  
+Run\submit topology  
+```
+storm jar target/AuditActiveLogins-0.1.0.jar org.buildoop.storm.AuditActiveLoginsTopology resources/configuration.properties
+```
 
-  storm jar target/.jar storm.kafka.KafkaSpoutTestTopology <zookeepers host:port> <kafka topic-name> <storm topology-name> <storm-nimbus host> <storm-nimbus port>
-  
-  -> Example:
-  
-  storm jar target/storm-kafka-0.8-plus-test-0.1.0-SNAPSHOT.jar storm.kafka.KafkaSpoutTestTopology hadoop-manager:2181,hadoop-node1:2181,hadoop-node2:2181 test-topic test-topology streaming1 6627
-  
-  To see the output open workers logs, Kafka messages will be print in these logs.
+### See results
+```
+hbase shell
+hbase > scan 'TableName'
+```
   
 
