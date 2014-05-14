@@ -76,20 +76,33 @@ hbase.column.family=
 # storm.nimbus.port
 ```
   
-### Run topology
+## Run topology
 
 First create the HBaseTable if previously is not created:
 ```
   hbase shell
   hbase > create 'TableName', 'ColumnFamily'
 ```
+
+### Storm dependencies
+
+Some libraries are required int storm lib directory:
+```
+kafka_2.9.2-0.8.0.jar
+metrics-core-2.2.0.jar
+scala-library-2.9.2.jar
+storm-hbase-0.1.0-SNAPSHOT-jar-with-dependencies.jar
+storm-kafka-0.8-plus-0.5.0-SNAPSHOT.jar
+```
+storm-hbase-0.1.0-SNAPSHOT-jar-with-dependencies.jar -> from https://github.com/mvalleavila/storm-kafka-0.8-plus
+storm-kafka-0.8-plus-0.5.0-SNAPSHOT.jar -> from https://github.com/buildoop/storm-hbase
   
-Run\submit topology  
+### Run\submit topology  
 ```
 storm jar target/AuditActiveLogins-0.1.0.jar org.buildoop.storm.AuditActiveLoginsTopology resources/configuration.properties
 ```
 
-### See results
+## See results
 ```
 hbase shell
 hbase > scan 'TableName'
