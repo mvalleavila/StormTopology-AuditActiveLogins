@@ -30,8 +30,9 @@ This bolt is based on https://github.com/ptgoetz/storm-hbase
 ## Compilation
   TODO: Currently a workaround is neccesary for load hbase configuration properties, hbase-site.xml is included in compilation time, and before compilation is neccesary to change the configuration values. hbase-site.xml is in resources directory
   
+```
   mvn clean package
-  
+```  
 ## Config topology
 ```
 # MANDATORY PROPERTIES
