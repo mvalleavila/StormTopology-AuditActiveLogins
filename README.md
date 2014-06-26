@@ -94,8 +94,8 @@ scala-library-2.9.2.jar
 storm-hbase-0.1.0-SNAPSHOT-jar-with-dependencies.jar
 storm-kafka-0.8-plus-0.5.0-SNAPSHOT.jar
 ```
-storm-hbase-0.1.0-SNAPSHOT-jar-with-dependencies.jar -> from https://github.com/mvalleavila/storm-kafka-0.8-plus  
-storm-kafka-0.8-plus-0.5.0-SNAPSHOT.jar -> from https://github.com/buildoop/storm-hbase
+storm-hbase-0.1.0-SNAPSHOT-jar-with-dependencies.jar -> from https://github.com/buildoop/storm-hbase
+storm-kafka-0.8-plus-0.5.0-SNAPSHOT.jar -> from https://github.com/mvalleavila/storm-kafka-0.8-plus
   
 ### Run\submit topology  
 ```
